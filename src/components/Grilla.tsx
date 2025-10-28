@@ -14,18 +14,35 @@ const Grilla = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background p-8">
-      <div className="max-w-6xl mx-auto">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-3">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 p-8">
+      <div className="max-w-7xl mx-auto">
+        <header className="text-center mb-16 animate-fade-in">
+          <div className="inline-block mb-4 px-6 py-2 bg-primary/10 rounded-full">
+            <span className="text-primary font-semibold text-sm">React Component Hierarchy</span>
+          </div>
+          <h1 className="text-5xl font-extrabold text-foreground mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Sistema de Usuarios
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Visualización jerárquica de componentes React
+          <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
+            Visualización jerárquica de componentes React con flujo de datos mediante props
           </p>
+          <div className="mt-6 flex items-center justify-center gap-4 text-sm">
+            <div className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border">
+              <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+              <span className="text-muted-foreground">Alto (≥45)</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border">
+              <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+              <span className="text-muted-foreground">Medio (30-44)</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border">
+              <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+              <span className="text-muted-foreground">Bajo (&lt;30)</span>
+            </div>
+          </div>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {usuarios.map((usuario) => (
             <Usuario
               key={usuario.id}
@@ -36,8 +53,13 @@ const Grilla = () => {
           ))}
         </div>
 
-        <footer className="mt-12 text-center text-sm text-muted-foreground">
-          <p>Datos fluyendo desde Grilla.jsx → Usuario.jsx (props)</p>
+        <footer className="mt-16 text-center">
+          <div className="inline-block px-8 py-4 bg-card rounded-xl border shadow-lg">
+            <p className="text-foreground font-semibold mb-1">Flujo de Datos</p>
+            <p className="text-muted-foreground text-sm">
+              Grilla.tsx <span className="text-primary font-bold">→</span> Usuario.tsx (via props)
+            </p>
+          </div>
         </footer>
       </div>
     </div>
