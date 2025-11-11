@@ -1,4 +1,4 @@
-# Nombre de los Alumnos: Santiago Vergara y Lucas Laime
+# Nombre de los Alumnos: Santiago Vergara
 
 # Aclaracion de valor: Este TP fue hecho casi en su totalidad con Lovable.
 
